@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>RecallScanner</title>
+       <meta name="description" content="Checks recalls on all* products with a Universal Product Code (UPC)">
+       <meta name="keywords" content="Recall, UPC, FDA, CSPC">
+       <meta name="author" content="Alan Gabriel Valencia">
+       <link rel="canonical" href="https://www.recallbyupc.web.app">
+
+
+       <!-- main meta tags and title above-->
+
+       <!-- linking .css and .js scripts-->
+
+
+              <style>
+        /* General CSS */
+
+
+body {
+   background-color:#ADD8E6;
+   font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   margin: 20px;
+}
+
+
+p {
+   color: black;
+   margin: 10px;
+}
+
+
+.centerAll {
+   display: flex;
+   flex-direction: column;
+   align-content: center;
+   justify-content: flex-start;
+   min-height: 100vh;
+   padding: 24px;
+   align-items: center;
+   box-sizing: border-box;
+   text-align: center;
+}
+
+
+.centerText {
+   text-align: center;
+}
+
+
+.boxOverlay {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      width: 100%;
+      max-width: 400px;
+      background-color: rgb(126, 206, 233);
+      overflow-wrap: break-word;
+      border-radius: 16px;
+      padding: 0px;
+      gap: 0px;
+}
+
+#camera-view {
+    width: 50%;             /* Scales to fit the width of the box */
+    max-width: 50%;         /* Prevents it from overflowing */
+    height: auto;            /* Maintains proper video aspect ratio */
+    border-radius: 12px;   
+    object-fit: cover;       /* Ensures the stream crops neatly instead of stretching */
+}
+       </style>
+
+
+      
+   </head>
+
+
+   <body style="background-color: lightblue;">
+       <div class="centerAll">
+           <h1 style="font-size: 48px"> RecallByUPC </h1>
+           <p> Hello! This is <b>Recall by UPC</b>, a web app that uses your camera to scan the product's barcode, and looks at
+           many government agencies, such as the FDA, CSPC, the USDA, and many more government agencies to check if there are any
+           product recalls for that specific item. Thank you! :)</p>
+
+
+           <div class="boxOverlay">
+                <h1> Help Guide </h1>
+
+                <h3>Step One</h3>
+                <p>Make sure you see your surrondings or yourself or anything in the box. <!-- seperated the single line of <p> into three for easier user readability-->
+                If you don't, check the <i><strong style="color: red;">red text.</strong></i> If you are still stuck, check the helpful
+                tip above the <b>Flip!</b> button.</p>
+
+                <h3>Step Two</h3>
+                <p>Get your item, and put its barcode in front of the camera. On mobile devices, 
+                you may "flip" the camera to your desired area, front or back, for a better scan, 
+                if the two cameras are of different quality. When you scan your desired item, if
+                it is a valid UPC, then it gets passed onto our servers, where it will come back
+                to you in under 300ms.</p>
+
+                <h2> That's it! Thanks for using my product.</h2>
+
+           </div>
+
+       </div>
+   </body>
+</html>
