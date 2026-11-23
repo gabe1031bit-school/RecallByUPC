@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>RecallScanner</title>
+       <meta name="description" content="Checks recalls on all* products with a Universal Product Code (UPC)">
+       <meta name="keywords" content="Recall, UPC, FDA, CSPC">
+       <meta name="author" content="Alan Gabriel Valencia">
+       <link rel="canonical" href="https://www.recallbyupc.web.app">
+
+
+       <!-- main meta tags and title above-->
+
+       <!-- linking .css and .js scripts-->
+
+
+       <link rel="stylesheet" href="styles.css">
+
+        
+      
+   </head>
+
+
+   <body onload="startCamera()">
+       <div class="centerAll">
+           <h1 style="font-size: 48px"> RecallByUPC </h1>
+           <p> Hello! This is <b>Recall by UPC</b>, a web app that uses your camera to scan the product's barcode, and looks at
+           many government agencies, such as the FDA, CSPC, the USDA, and many more government agencies to check if there are any
+           product recalls for that specific item. Thank you! :)</p>
+
+           <p> <strong>If you are on <i>mobile</i>, this service will NOT work, or any other device that
+            does not support the native BarcodeScanner API. I am working on a fix. </strong></p>
+
+
+           <div class="boxOverlay">
+               <p> <b> Scan your item in front of your webcam. </b> <br> A preview will be shown below here. <br> Need help? <strong><a href="/help">Click here for a guide.</a></strong></p>
+               <video id="camera-view" autoplay playsinline></video>
+               <p id="errorTip"></p>
+               <button onclick="flip()">Flip the camera! (applicable on mobile devices <b>only</b>!)</button>
+               <i><p style="color: red;" id="errorCatcher"></p></i>
+               <strong><p style="color: greenyellow;" id="upcFound"></p></strong>
+               <hr>
+               <p id="itemUPC"></p>
+               <img id="itemImage"></img>
+               <h3 id="itemTitle"></h3>
+               <p id="itemDescription"></p>
+               <br>
+               <h4 id="govapisTitle"></h4>
+               <strong><p id="cspcTitle"></p></strong>
+               <b><p id="cspcResults"></p></b>
+               <strong><p id="fdaTitle"></p></strong>
+               <b><p id="fdaResults"></p></b>
+               <strong><p id="fsisTitle"></p></strong>
+               <b><p id="fsisResults"></p></b>
+               <strong><p id="nhtsaTitle"></p></strong>
+               <b><p id="nhtsaResults"></p></b>
+               <strong><p id="epapplsTitle"></p></strong> <!-- EPA Pesticide Product Label System (PPLS)-->
+               <b><p id="epapplsResults"></p></b>
+            </div>
+
+           <script src="camera.js" defer></script>
+           <script src="main.js" defer></script>
+
+
+       </div>
+      
+       <script type="module">
+       // Import the functions you need from the SDKs you need
+       import { initializeApp } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-app.js";
+       import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.2.0/firebase-analytics.js";
+       // TODO: Add SDKs for Firebase products that you want to use
+       // https://firebase.google.com/docs/web/setup#available-libraries
+
+
+       // Your web app's Firebase configuration
+       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+       const firebaseConfig = {
+           apiKey: "AIzaSyA-3oSb3BgK1ZGD_mLn_GXZu3a1mBilb9g",
+           authDomain: "recallbyupc.firebaseapp.com",
+           projectId: "recallbyupc",
+           storageBucket: "recallbyupc.firebasestorage.app",
+           messagingSenderId: "247505759386",
+           appId: "1:247505759386:web:56d0f5ea82c636de628323",
+           measurementId: "G-Q1LYX0C7CV"
+       };
+
+
+       // Initialize Firebase
+       const app = initializeApp(firebaseConfig);
+       const analytics = getAnalytics(app);
+       </script>
+
+       <p id="doclog" style="color: greenyellow;"></p>
+   </body>
+</html>

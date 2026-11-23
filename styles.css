@@ -1,0 +1,55 @@
+/* General CSS */
+
+
+body {
+   background-color:#ADD8E6;
+   font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   margin: 20px;
+}
+
+
+p {
+   color: black;
+   margin: 10px;
+}
+
+
+.centerAll {
+   display: flex;
+   flex-direction: column;
+   align-content: center;
+   justify-content: flex-start;
+   min-height: 100vh;
+   padding: 24px;
+   align-items: center;
+   box-sizing: border-box;
+   text-align: center;
+}
+
+
+.centerText {
+   text-align: center;
+}
+
+
+.boxOverlay {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      width: 100%;
+      max-width: 400px;
+      background-color: rgb(126, 206, 233);
+      overflow-wrap: break-word;
+      border-radius: 16px;
+      padding: 0px;
+      gap: 0px;
+}
+
+#camera-view {
+    width: 50%;             /* Scales to fit the width of the box */
+    max-width: 50%;         /* Prevents it from overflowing */
+    height: auto;            /* Maintains proper video aspect ratio */
+    border-radius: 12px;   
+    object-fit: cover;       /* Ensures the stream crops neatly instead of stretching */
+}
